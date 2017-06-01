@@ -1,0 +1,41 @@
+﻿@model SimpleForm.Models.FileAttache
+
+@{
+    ViewBag.Title = "Upload File";
+}
+
+
+
+@using (Html.BeginForm()) 
+{
+    @Html.AntiForgeryToken()
+    
+    <div class="form-horizontal">
+       
+        <hr />
+        <input type="file" id="FileUpload1" />
+        <input type="button" id="btnUpload" value="Upload Files" />
+
+   @*<form id="formUpload" method ="post" action="Attache/Upload"> 
+        <p>Name:</p>
+        <input id="name" type="text" name="Name" ><br>
+         <p>Image:</p>
+        <input type="file" name="FileUpload" id="upload" /><br>
+        <input type="button" name="Submit" id="Submit" value="Upload" /><br>
+     </form>*@
+    
+    </div>
+}
+
+<div>
+   @Html.ActionLink("Back to List", "Create" ,"Attache")
+</div>
+
+@section Scripts {
+
+
+@Scripts.Render("~/bundles/jqueryval")
+@Scripts.Render("~/bundles/myscripts")
+
+
+}
